@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyKids – Profile</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/profile.js" type="module"></script>
+</head>
+<body>
+
+<header>
+    <div id="logo">HealthyKids</div>
+    <button id="menu-btn">☰</button>
+</header>
+
+<main>
+    <h1 class="page-title">User Profile</h1>
+    <p class="page-subtitle">Enter child information</p>
+
+    <form id="profileForm" class="profile-form">
+        <label>Name:</label>
+        <input type="text" id="childName" placeholder="Enter name">
+
+        <label>Age:</label>
+        <input type="number" id="childAge" placeholder="Age in years">
+
+        <button type="submit" class="btn-save">Save Profile</button>
+    </form>
+
+    <div id="profileDisplay" class="profile-display" style="display:none;">
+        <h2>Profile Summary</h2>
+        <p><strong>Name:</strong> <span id="displayName"></span></p>
+        <p><strong>Age:</strong> <span id="displayAge"></span></p>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 HealthyKids</p>
+</footer>
+
+</body>
+</html>

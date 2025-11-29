@@ -1,0 +1,216 @@
+:root {
+    --primary-blue: #add8e6;
+    --soft-yellow: #ffffed;
+    --fresh-green: #90ee90;
+    --font-heading: 'Fredoka One', cursive; 
+    --font-body: 'Roboto', sans-serif;
+}
+ 
+body {
+    font-family: var(--font-body);
+    background-color: white;
+}
+
+#lessonResults {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.page-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+#lessonSearch {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.lesson-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.lesson-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lesson-card:hover {
+  transform: scale(1.03);
+}
+
+.lesson-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.lesson-card h3 {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.lesson-card p {
+  color: gray;
+  font-size: 0.9rem;
+}
+ 
+/* ===========================
+   HEADER & NAVIGATION
+   =========================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--primary-blue);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: #004d66;
+}
+
+#menu-btn {
+  background: var(--fresh-green);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+footer {
+  text-align: center;
+  padding: 12px;
+  background: var(--soft-yellow);
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   GRID LAYOUT
+   =========================== */
+.lesson-grid,
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* ===========================
+   NUTRITION RESULTS
+   =========================== */
+.food-result-card {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.food-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.details-panel {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9fcff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nutrition-list {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8rem;
+}
+
+/* ===========================
+   HEADING FONTS
+   =========================== */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
+button.primary {
+  background: var(--fresh-green);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.primary:hover {
+  background: #76d176;
+}
+
+/* ===========================
+   UTILITY CLASSES
+   =========================== */
+.loading {
+  text-align: center;
+  color: #777;
+}
+
+.no-results {
+  text-align: center;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.instruction {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.details-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.details-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}

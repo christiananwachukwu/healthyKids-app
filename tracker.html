@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyKids – Habit Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/tracker.js" type="module"></script>
+</head>
+<body>
+
+<header>
+    <div id="logo">HealthyKids</div>
+    <button id="menu-btn">☰</button>
+</header>
+
+<main>
+    <h1 class="page-title">Habit Tracker</h1>
+    <p class="page-subtitle">Track daily hygiene and nutrition habits</p>
+
+    <div id="trackerContainer" class="tracker-container">
+
+        <div class="tracker-item">
+            <label>
+                <input type="checkbox" id="brushCheckbox">
+                Brushed Teeth Today
+            </label>
+        </div>
+
+        <div class="tracker-item">
+            <label>
+                <input type="checkbox" id="handwashCheckbox">
+                Washed Hands (5+ times)
+            </label>
+        </div>
+
+        <div class="tracker-item">
+            <label>
+                <input type="checkbox" id="waterCheckbox">
+                Drank Enough Water
+            </label>
+        </div>
+
+        <button id="saveTracker" class="btn-save">Save Today's Progress</button>
+
+        <div id="trackerMessage"></div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 HealthyKids</p>
+</footer>
+
+</body>
+</html>
