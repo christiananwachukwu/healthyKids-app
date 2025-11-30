@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthyKids – Brushing Timer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/timer.js" type="module"></script>
+</head>
+<body>
+
+    <header>
+        <div id="logo">HealthyKids</div>
+        <button id="menu-btn">☰</button>
+        <nav id="nav-links" class="hidden">
+            <a href="index.html">Home</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="tracker.html">Habit Tracker</a>
+            <a href="games.html">Games</a>
+            <a href="profile.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title">🦷 Teeth Brushing Timer</h1>
+        <p class="page-subtitle">Brush for the full 2 minutes—don't miss a spot!</p>
+
+        <div class="timer-container">
+           
+            <div id="media-area" class="media-box">
+               
+                <video id="brushVideo" autoplay loop width="100%" height="auto" style="max-width: 400px; border-radius: 8px;">
+                    <source src="images/kids-brushing.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+               
+                <img id="zoneImage1" src="assets/brush_upper_right.png" class="zone-image" alt="Upper right zone highlighted" style="display: none; width: 100%; max-width: 400px; border-radius: 8px;">
+               
+                <img id="zoneImage2" src="assets/brush_upper_left.png" class="zone-image" alt="Upper left zone highlighted" style="display: none; width: 100%; max-width: 400px; border-radius: 8px;">
+               
+                <img id="zoneImage3" src="assets/brush_bottom_left.png" class="zone-image" alt="Bottom left zone highlighted" style="display: none; width: 100%; max-width: 400px; border-radius: 8px;">
+               
+                <img id="zoneImage4" src="assets/brush_bottom_right.png" class="zone-image" alt="Bottom right zone highlighted" style="display: none; width: 100%; max-width: 400px; border-radius: 8px;">
+            </div>
+            <div class="timer-display">
+                <span id="timer-minutes">02</span>:<span id="timer-seconds">00</span>
+            </div>
+
+            <p id="dynamic-instruction" class="instruction" style="font-size: 1.2rem; font-weight: bold; min-height: 40px;">
+                Click Start to begin the 2-minute challenge!
+            </p>
+
+            <button id="start-timer-btn" class="btn-save" data-duration="120">Start Brushing!</button>
+            <p id="timer-message" class="instruction"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HealthyKids</p>
+    </footer>
+
+    <script src="js/menu.js"></script>
+</body>
+</html>
