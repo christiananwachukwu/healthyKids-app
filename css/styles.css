@@ -214,3 +214,46 @@ button.primary:hover {
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+/* Header layout */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #4CAF50;
+  color: white;
+  position: relative;
+}
+
+/* Hamburger button */
+#menu-btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hidden navigation */
+#nav-links {
+  display: none;
+  flex-direction: column;
+  background: white;
+  position: absolute;
+  top: 60px; /* below header */
+  right: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#nav-links a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+/* When menu is opened */
+#nav-links.show {
+  display: flex;
+}

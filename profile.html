@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthyKids – Profile</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/profile.js" type="module"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthyKids – Dashboard & Profile</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/dashboard.js" type="module"></script>
+  <script src="js/profile.js" type="module"></script>
 </head>
-<body>
 
-<header>
+<body>
+  <header>
     <div id="logo">HealthyKids</div>
     <button id="menu-btn">☰</button>
-</header>
+    <nav id="nav-links" class="hidden">
+            <a href="index.html">Home</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="lesson.html">Lessons</a>
+            <a href="tracker.html">Habit Tracker</a>
+            <a href="games.html">Games</a>
+            <a href="profile.html">Dashboard</a>
+        </nav>
+  </header>
 
-<main>
-    <h1 class="page-title">User Profile</h1>
-    <p class="page-subtitle">Enter child information</p>
+  <main>
 
-    <form id="profileForm" class="profile-form">
+    <!-- **************** PROFILE SECTION **************** -->
+    <section id="profileSection">
+      <h1 class="page-title">User Profile</h1>
+      <p class="page-subtitle">Enter child information</p>
+
+      <form id="profileForm" class="profile-form">
         <label>Name:</label>
         <input type="text" id="childName" placeholder="Enter name">
 
@@ -26,18 +38,46 @@
         <input type="number" id="childAge" placeholder="Age in years">
 
         <button type="submit" class="btn-save">Save Profile</button>
-    </form>
+      </form>
 
-    <div id="profileDisplay" class="profile-display" style="display:none;">
+      <div id="profileDisplay" class="profile-display" style="display:none;">
         <h2>Profile Summary</h2>
         <p><strong>Name:</strong> <span id="displayName"></span></p>
         <p><strong>Age:</strong> <span id="displayAge"></span></p>
-    </div>
-</main>
+      </div>
+    </section>
 
-<footer>
+    <!-- **************** DASHBOARD SECTION **************** -->
+    <section id="dashboardSection">
+      <h1 class="page-title">Progress Dashboard</h1>
+      <p class="page-subtitle">View your weekly healthy habits progress</p>
+
+      <div id="progressSummary" class="dashboard-cards">
+        <div class="dash-card">
+          <h3>Brushing</h3>
+          <p id="brushStats">0 / 7 days</p>
+        </div>
+
+        <div class="dash-card">
+          <h3>Handwashing</h3>
+          <p id="handwashStats">0 / 7 days</p>
+        </div>
+
+        <div class="dash-card">
+          <h3>Water Intake</h3>
+          <p id="waterStats">0 / 7 days</p>
+        </div>
+      </div>
+
+      <canvas id="progressChart" width="300" height="200"></canvas>
+    </section>
+
+  </main>
+
+  <footer>
     <p>&copy; 2025 HealthyKids</p>
-</footer>
+  </footer>
+  <script src="js/menu.js"></script>
 
 </body>
 </html>
