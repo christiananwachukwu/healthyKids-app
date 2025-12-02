@@ -1,3 +1,5 @@
+// js/nutrition.js - FINALIZED NUTRITION LOGIC
+
 import { searchFood, getFoodDetails } from './api.js';
 
 // DOM Elements
@@ -5,15 +7,16 @@ const searchInput = document.getElementById('foodSearch');
 const searchResultsContainer = document.getElementById('searchResults');
 const detailsPanel = document.getElementById('nutritionDetails');
 const detailTitle = document.getElementById('detailTitle');
-const detailsContent = document.getElementById('detailsContent');
+const detailsContent = document.getElementById('detailsContent'); // For text content
+const detailsImage = document.getElementById('detailsImage');     // For the image container
 
-// --- Main Search Handler ---
+// --- Main Search Handler (Fires on key input) ---
 searchInput.addEventListener('input', async () => {
     const query = searchInput.value.trim();
 
     // Only search if the query is at least 3 characters long
     if (query.length < 3) {
-        searchResultsContainer.innerHTML = "";
+        searchResultsContainer.innerHTML = '<p class="instruction">Start typing above to search for a food.</p>';
         detailsPanel.style.display = 'none';
         return;
     }
@@ -22,7 +25,7 @@ searchInput.addEventListener('input', async () => {
 
     // 1. Call the Spoonacular search function
     const foods = await searchFood(query);
-   
+
     // 2. Display the list of food products
     displayFoodResults(foods, query);
 });
@@ -37,13 +40,13 @@ function displayFoodResults(foods, query) {
     // Create a list of clickable food items
     const foodListHTML = foods.map(food => `
         <div class="food-result-card" data-id="${food.id}" data-name="${food.title}">
-            <img src="https://spoonacular.com/productImages/${food.id}-100x100.jpg" alt="${food.title}" class="food-thumbnail">
+            <img src="https://spoonacular.com/productImages/${food.id}-100x100.jpg" alt="${food.title}" class="food-thumbnail" onerror="this.onerror=null; this.src='https://via.placeholder.com/100'">
             <span class="food-title">${food.title}</span>
         </div>
     `).join('');
-
-    searchResultsContainer.innerHTML = foodListHTML;
    
+    searchResultsContainer.innerHTML = foodListHTML;
+
     // Add click listeners to each result card
     document.querySelectorAll('.food-result-card').forEach(card => {
         card.addEventListener('click', () => {
@@ -59,7 +62,8 @@ async function fetchAndDisplayDetails(foodId, foodName) {
     detailsPanel.style.display = 'block';
     detailTitle.textContent = foodName;
     detailsContent.innerHTML = '<p class="loading">Loading nutrition details...</p>';
-   
+    detailsImage.innerHTML = ''; // Clear old image
+
     // 1. Call the Spoonacular details function
     const details = await getFoodDetails(foodId);
 
@@ -67,21 +71,21 @@ async function fetchAndDisplayDetails(foodId, foodName) {
         detailsContent.innerHTML = '<p class="no-data">Could not retrieve detailed nutrition information for this item.</p>';
         return;
     }
-   
+
     // 2. Extract and format the key nutrition facts
     const nutritionFacts = details.nutrition.nutrients;
     const keyNutrients = {};
    
     // Filter for the main facts relevant to a kid's app
     const targetNutrients = ['Calories', 'Fat', 'Carbohydrates', 'Sugar', 'Protein', 'Fiber', 'Sodium'];
-
+   
     nutritionFacts.forEach(nutrient => {
         if (targetNutrients.includes(nutrient.name)) {
             keyNutrients[nutrient.name] = `${nutrient.amount} ${nutrient.unit}`;
         }
     });
 
-    // 3. Render the details content
+    // 3. Render the details content (Text Facts)
     detailsContent.innerHTML = `
         <ul class="nutrition-list">
             <li><strong>Calories:</strong> ${keyNutrients.Calories || 'N/A'}</li>
@@ -95,49 +99,32 @@ async function fetchAndDisplayDetails(foodId, foodName) {
         <p class="serving-info">Serving size information may vary.</p>
     `;
 
-    const imageBox = document.getElementById('detailsImage');
-    imageBox.innerHTML = `<img src="https://spoonacular.com/productImages/${foodId}-312x231.jpg"
-    alt="${foodName}"
-    class="details-image"
-    onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
+    // 4. Render the image in its separate container (Image Box)
+    detailsImage.innerHTML = `
+        <img src="https://spoonacular.com/productImages/${foodId}-312x231.jpg"
+             alt="${foodName}"
+             class="details-image"
+             onerror="this.onerror=null; this.src='https://via.placeholder.com/300'">
     `;
 }
+// js/nutrition.js (Add this block at the very bottom)
 
-async function fetchProduct(productId) {
-    const apiKey = 'b8833077255d4180bc2327d4d4380e93';
-    const url = `https://api.spoonacular.com/food/products/${productId}?apiKey=${apiKey}`;
+// --- Default Content Loader (Called on page load) ---
+async function loadDefaultFoods() {
+    searchResultsContainer.innerHTML = '<p class="loading">Loading healthy suggestions...</p>';
+   
+    // Use a general query term to fetch initial results
+    const defaultQuery = 'fruit';
 
-    try {
-        const response = await fetch(url);
+    // 1. Call the Spoonacular search function
+    const foods = await searchFood(defaultQuery);
 
-        if (response.status === 402) {
-            // Payment required - show friendly message or fallback
-            console.warn(`Payment required for product ${productId}`);
-            return { error: "API limit reached or plan restriction. Please try later." };
-        }
-
-        if (!response.ok) {
-            // Handle other HTTP errors
-            console.error(`Error fetching product ${productId}: ${response.status}`);
-            return { error: "Unable to fetch product info." };
-        }
-
-        const data = await response.json();
-        return data;
-
-    } catch (error) {
-        console.error(`Network or fetch error: ${error}`);
-        return { error: "Network error occurred." };
-    }
+    // 2. Display the list of food products
+    displayFoodResults(foods, defaultQuery);
 }
 
-// Example usage:
-fetchProduct(9568182).then(result => {
-    if (result.error) {
-        // Show fallback UI or message
-        document.getElementById('productInfo').innerText = result.error;
-    } else {
-        // Display product data normally
-        document.getElementById('productInfo').innerText = JSON.stringify(result, null, 2);
-    }
+// --- Initial Load Event ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Call the function to load default foods immediately
+    loadDefaultFoods();
 });
