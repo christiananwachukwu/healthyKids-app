@@ -140,3 +140,6 @@ vite.config.ts.timestamp-*
 
 js/config.js
 
+
+# Local Netlify folder
+.netlify

@@ -1,0 +1,24 @@
+{
+  "name": "healthykids-app",
+  "version": "1.0.0",
+  "description": "Final project for WDD 330 - Healthy Habits App for Kids",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx netlify dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiananwachukwu/healthyKids-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christiananwachukwu/healthyKids-app/issues"
+  },
+  "homepage": "https://github.com/christiananwachukwu/healthyKids-app#readme",
+  "devDependencies": {
+    "netlify-cli": "17.7.1"
+  }
+}
