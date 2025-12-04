@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/christiananwachukwu/healthyKids-app#readme",
   "devDependencies": {
-    "netlify-cli": "17.7.1"
+    "netlify-cli": "^17.7.1"
   }
 }
