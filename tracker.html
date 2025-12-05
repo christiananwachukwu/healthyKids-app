@@ -1,76 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthyKids – Habit Tracker</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/tracker.js" type="module"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div id="logo">HealthyKids</div>
-        <button id="menu-btn">☰</button>
-        <nav id="nav-links" class="hidden">
-            <a href="index.html">Home</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="lessons.html">Lessons</a>
-            <a href="tracker.html">Habit Tracker</a>
-            <a href="games.html">Games</a>
-            <a href="profile.html">Dashboard</a>
-        </nav>
+      <div id="logo">HealthyKids</div>
+      <button id="menu-btn">☰</button>
+      <nav id="nav-links" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="tracker.html">Habit Tracker</a>
+        <a href="games.html">Games</a>
+        <a href="profile.html">Dashboard</a>
+      </nav>
     </header>
 
     <main>
-        <h1 class="page-title">Daily Habits Tracker</h1>
-        <p class="page-subtitle">Mark your progress for today!</p>
+      <h1 class="page-title">Daily Habits Tracker</h1>
+      <p class="page-subtitle">Mark your progress for today!</p>
 
-        <div id="trackerContainer" class="tracker-container">
-           
-            <div id="habitList" class="habit-list">
-               
-                <div class="tracker-item">
-                    <label>
-                        <input type="checkbox" id="brushCheckbox"> Brushed Teeth Today
-                    </label>
-                </div>
-               
-                <div class="tracker-item">
-                    <label>
-                        <input type="checkbox" id="handwashCheckbox"> Washed Hands (5+ times)
-                    </label>
-                </div>
-               
-                <div class="tracker-item">
-                    <label>
-                        <input type="checkbox" id="waterCheckbox"> Drank Enough Water
-                    </label>
-                </div>
+      <div id="trackerContainer" class="tracker-container">
+        <div id="habitList" class="habit-list">
+          <div class="tracker-item">
+            <label>
+              <input type="checkbox" id="brushCheckbox" /> Brushed Teeth Today
+            </label>
+          </div>
 
-                <div class="tracker-item">
-                    <label>
-                        <input type="checkbox" id="fruitVegCheckbox"> Ate 1 Fruit or Veggie
-                    </label>
-                </div>
-               
-                <div class="tracker-item">
-                    <label>
-                        <input type="checkbox" id="activityCheckbox"> Played for 30+ Minutes
-                    </label>
-                </div>
-           
-            </div> <button id="saveTracker" class="btn-save">Save Today's Progress</button>
-           
-            <div id="trackerMessage" class="instruction"></div>
+          <div class="tracker-item">
+            <label>
+              <input type="checkbox" id="handwashCheckbox" /> Washed Hands (5+
+              times)
+            </label>
+          </div>
+
+          <div class="tracker-item">
+            <label>
+              <input type="checkbox" id="waterCheckbox" /> Drank Enough Water
+            </label>
+          </div>
+
+          <div class="tracker-item">
+            <label>
+              <input type="checkbox" id="fruitVegCheckbox" /> Ate 1 Fruit or
+              Veggie
+            </label>
+          </div>
+
+          <div class="tracker-item">
+            <label>
+              <input type="checkbox" id="activityCheckbox" /> Played for 30+
+              Minutes
+            </label>
+          </div>
         </div>
+        <button id="saveTracker" class="btn-save">Save Today's Progress</button>
+
+        <div id="trackerMessage" class="instruction"></div>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 HealthyKids</p>
+      <p>&copy; 2025 HealthyKids</p>
     </footer>
 
     <script src="js/menu.js"></script>
-
-</body>
+  </body>
 </html>

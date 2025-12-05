@@ -1,56 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthyKids – Nutrition Analysis</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/nutrition.js" type="module"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div id="logo">HealthyKids</div>
-        <button id="menu-btn">☰</button>
-        <nav id="nav-links" class="hidden">
-            <a href="index.html">Home</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="lesson.html">Lessons</a>
-            <a href="tracker.html">Habit Tracker</a>
-            <a href="games.html">Games</a>
-            <a href="profile.html">Dashboard</a>
-        </nav>
+      <div id="logo">HealthyKids</div>
+      <button id="menu-btn">☰</button>
+      <nav id="nav-links" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="lesson.html">Lessons</a>
+        <a href="tracker.html">Habit Tracker</a>
+        <a href="games.html">Games</a>
+        <a href="profile.html">Dashboard</a>
+      </nav>
     </header>
 
     <main>
-        <h1 class="page-title">Nutrition Analysis</h1>
-        <p class="page-subtitle">Look up nutrition facts for different foods</p>
+      <h1 class="page-title">Nutrition Analysis</h1>
+      <p class="page-subtitle">Look up nutrition facts for different foods</p>
 
-        <div class="search-box">
-            <input
-                type="text"
-                id="foodSearch"
-                placeholder="Search for a food, e.g., banana, milk"
-            >
-        </div>
+      <div class="search-box">
+        <input
+          type="text"
+          id="foodSearch"
+          placeholder="Search for a food, e.g., banana, milk"
+        />
+      </div>
 
-        <div id="searchResults" class="food-list">
-             <p class="instruction">Start typing above to search for a food.</p>
-        </div>
+      <div id="searchResults" class="food-list">
+        <p class="instruction">Start typing above to search for a food.</p>
+      </div>
 
-        <div id="nutritionDetails" class="details-panel" style="display:none;">
-            <h2><span id="detailTitle">Food Item</span> Nutrition Facts</h2>
-            <div id="detailsContent">
-                </div>
-            <div id="detailsImage" class="details-image-container"></div>
-        </div>
-        
+      <div id="nutritionDetails" class="details-panel" style="display: none">
+        <h2><span id="detailTitle">Food Item</span> Nutrition Facts</h2>
+        <div id="detailsContent"></div>
+        <div id="detailsImage" class="details-image-container"></div>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 HealthyKids</p>
+      <p>&copy; 2025 HealthyKids</p>
     </footer>
     <script src="js/menu.js"></script>
-
-</body>
+  </body>
 </html>

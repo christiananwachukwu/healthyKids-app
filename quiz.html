@@ -1,56 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthyKids – Health Quiz</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/quiz.js" type="module"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div id="logo">HealthyKids</div>
-        <button id="menu-btn">☰</button>
-        <nav id="nav-links" class="hidden">
-            <a href="index.html">Home</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="lessons.html">Lessons</a>
-            <a href="tracker.html">Habit Tracker</a>
-            <a href="games.html">Games</a>
-            <a href="profile.html">Dashboard</a>
-        </nav>
+      <div id="logo">HealthyKids</div>
+      <button id="menu-btn">☰</button>
+      <nav id="nav-links" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="tracker.html">Habit Tracker</a>
+        <a href="games.html">Games</a>
+        <a href="profile.html">Dashboard</a>
+      </nav>
     </header>
 
     <main>
-        <h1 class="page-title">Health Habits Quiz</h1>
-        <p class="page-subtitle">Answer the questions to earn a badge!</p>
+      <h1 class="page-title">Health Habits Quiz</h1>
+      <p class="page-subtitle">Answer the questions to earn a badge!</p>
 
-        <div class="quiz-container">
-            <div id="quiz-area">
-                <h2 id="question-text"></h2>
-               
-                <div id="options-container" class="options-grid">
-                    </div>
+      <div class="quiz-container">
+        <div id="quiz-area">
+          <h2 id="question-text"></h2>
 
-                <div id="feedback-message"></div>
-            </div>
+          <div id="options-container" class="options-grid"></div>
 
-            <button id="next-button" class="btn-save" style="display: none;">Next Question</button>
-
-            <div id="results-area" class="details-panel" style="display: none;">
-                <h2>Quiz Complete!</h2>
-                <p>Your final score: <span id="final-score">0</span> / <span id="total-questions">0</span></p>
-                <button id="restart-button" class="btn-save" onclick="window.location.reload()">Play Again</button>
-            </div>
+          <div id="feedback-message"></div>
         </div>
+
+        <button id="next-button" class="btn-save" style="display: none">
+          Next Question
+        </button>
+
+        <div id="results-area" class="details-panel" style="display: none">
+          <h2>Quiz Complete!</h2>
+          <p>
+            Your final score: <span id="final-score">0</span> /
+            <span id="total-questions">0</span>
+          </p>
+          <button
+            id="restart-button"
+            class="btn-save"
+            onclick="window.location.reload()"
+          >
+            Play Again
+          </button>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 HealthyKids</p>
+      <p>&copy; 2025 HealthyKids</p>
     </footer>
 
     <script src="js/menu.js"></script>
-
-</body>
+  </body>
 </html>

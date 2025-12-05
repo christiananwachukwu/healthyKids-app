@@ -1,58 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthyKids – Handwashing Timer</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/timer.js" type="module"></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div id="logo">HealthyKids</div>
-        <button id="menu-btn">☰</button>
-        <nav id="nav-links" class="hidden">
-            <a href="index.html">Home</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="lessons.html">Lessons</a>
-            <a href="tracker.html">Habit Tracker</a>
-            <a href="games.html">Games</a>
-            <a href="profile.html">Dashboard</a>
-        </nav>
+      <div id="logo">HealthyKids</div>
+      <button id="menu-btn">☰</button>
+      <nav id="nav-links" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="tracker.html">Habit Tracker</a>
+        <a href="games.html">Games</a>
+        <a href="profile.html">Dashboard</a>
+      </nav>
     </header>
 
     <main>
-        <h1 class="page-title">🧼 Handwashing Timer</h1>
-        <p class="page-subtitle">Follow the steps for 20 seconds of germ-busting clean!</p>
+      <h1 class="page-title">🧼 Handwashing Timer</h1>
+      <p class="page-subtitle">
+        Follow the steps for 20 seconds of germ-busting clean!
+      </p>
 
-        <div class="timer-container">
-           
-            <div id="media-area" class="media-box">
-                <video id="handwashVideo" autoplay loop width="100%" height="auto" style="max-width: 400px; border-radius: 8px;">
-                    <source src="images/handwashing.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <img id="rinseImage" src="images/handwashing-1.webp" alt="Hands rinsing under water" style="display: none; width: 100%; max-width: 400px; border-radius: 8px;">
-            </div>
-
-            <div class="timer-display">
-                <span id="timer-minutes">00</span>:<span id="timer-seconds">20</span>
-            </div>
-
-            <p id="dynamic-instruction" class="instruction" style="font-size: 1.2rem; font-weight: bold; min-height: 40px;">
-                Click Start to begin the 20-second wash!
-            </p>
-
-            <button id="start-timer-btn" class="btn-save" data-duration="20">Start Washing!</button>
-            <p id="timer-message" class="instruction"></p>
+      <div class="timer-container">
+        <div id="media-area" class="media-box">
+          <video
+            id="handwashVideo"
+            autoplay
+            loop
+            width="100%"
+            height="auto"
+            style="max-width: 400px; border-radius: 8px"
+          >
+            <source src="images/handwashing.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <img
+            id="rinseImage"
+            src="images/handwashing-1.webp"
+            alt="Hands rinsing under water"
+            style="
+              display: none;
+              width: 100%;
+              max-width: 400px;
+              border-radius: 8px;
+            "
+          />
         </div>
+
+        <div class="timer-display">
+          <span id="timer-minutes">00</span>:<span id="timer-seconds">20</span>
+        </div>
+
+        <p
+          id="dynamic-instruction"
+          class="instruction"
+          style="font-size: 1.2rem; font-weight: bold; min-height: 40px"
+        >
+          Click Start to begin the 20-second wash!
+        </p>
+
+        <button id="start-timer-btn" class="btn-save" data-duration="20">
+          Start Washing!
+        </button>
+        <p id="timer-message" class="instruction"></p>
+      </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 HealthyKids</p>
+      <p>&copy; 2025 HealthyKids</p>
     </footer>
 
     <script src="js/menu.js"></script>
-</body>
+  </body>
 </html>

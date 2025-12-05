@@ -1,6 +1,8 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "healthykids-app",
   "version": "1.0.0",
+  "type": "module",
   "description": "Final project for WDD 330 - Healthy Habits App for Kids",
   "main": "index.js",
   "scripts": {
@@ -19,6 +21,8 @@
   },
   "homepage": "https://github.com/christiananwachukwu/healthyKids-app#readme",
   "devDependencies": {
-    "netlify-cli": "^17.7.1"
+    "eslint": "^9.39.1",
+    "netlify-cli": "^23.12.2",
+    "prettier": "^3.7.4"
   }
 }

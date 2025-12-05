@@ -20,41 +20,40 @@ let trackerData = loadData(TRACKER_KEY) || {};
 
 // 1. --- LOAD TODAY'S STATUS ---
 function loadDailyStatus() {
-    const todayRecord = trackerData[today];
+  const todayRecord = trackerData[today];
 
-    if (todayRecord) {
-        // Set the checked state based on saved data, defaulting to false if undefined
-        brushCheck.checked = todayRecord.brushed || false;
-        handwashCheck.checked = todayRecord.handwash || false;
-        waterCheck.checked = todayRecord.water || false;
-        fruitVegCheck.checked = todayRecord.fruitVeg || false;  // 🎯 LOAD NEW HABIT
-        activityCheck.checked = todayRecord.activity || false; // 🎯 LOAD NEW HABIT
+  if (todayRecord) {
+    // Set the checked state based on saved data, defaulting to false if undefined
+    brushCheck.checked = todayRecord.brushed || false;
+    handwashCheck.checked = todayRecord.handwash || false;
+    waterCheck.checked = todayRecord.water || false;
+    fruitVegCheck.checked = todayRecord.fruitVeg || false; // 🎯 LOAD NEW HABIT
+    activityCheck.checked = todayRecord.activity || false; // 🎯 LOAD NEW HABIT
 
-        messageBox.textContent = "Today's progress loaded successfully.";
-    }
+    messageBox.textContent = "Today's progress loaded successfully.";
+  }
 }
 
 // 2. --- SAVE TODAY'S PROGRESS ---
 saveBtn.addEventListener("click", () => {
-   
-    // Create or overwrite today's record
-    trackerData[today] = {
-        brushed: brushCheck.checked,
-        handwash: handwashCheck.checked,
-        water: waterCheck.checked,
-       
-        // 🎯 SAVE NEW HABITS
-        fruitVeg: fruitVegCheck.checked,
-        activity: activityCheck.checked,
-    };
+  // Create or overwrite today's record
+  trackerData[today] = {
+    brushed: brushCheck.checked,
+    handwash: handwashCheck.checked,
+    water: waterCheck.checked,
 
-    saveData(TRACKER_KEY, trackerData);
+    // 🎯 SAVE NEW HABITS
+    fruitVeg: fruitVegCheck.checked,
+    activity: activityCheck.checked,
+  };
 
-    messageBox.textContent = "Your progress has been saved! 🎉";
-    messageBox.style.color = "var(--fresh-green)"; // Use CSS variable for consistency
+  saveData(TRACKER_KEY, trackerData);
 
-    // Clear message after 3 seconds
-    setTimeout(() => (messageBox.textContent = ""), 3000);
+  messageBox.textContent = "Your progress has been saved! 🎉";
+  messageBox.style.color = "var(--fresh-green)"; // Use CSS variable for consistency
+
+  // Clear message after 3 seconds
+  setTimeout(() => (messageBox.textContent = ""), 3000);
 });
 
 // 3. --- RUN on PAGE LOAD ---

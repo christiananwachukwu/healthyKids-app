@@ -2,332 +2,339 @@
    1. COLOR VARIABLES & BASE
    =========================== */
 :root {
-    --primary-blue: #add8e6; /* Light Blue */
-    --soft-yellow: #ffffed; /* Off-White/Yellow */
-    --fresh-green: #90ee90; /* Light Green (for buttons/success) */
-    --font-heading: 'Fredoka One', cursive;
-    --font-body: 'Roboto', sans-serif;
-    --dark-teal: #004d66; /* Dark color for logo/text contrast */
+  --primary-blue: #add8e6; /* Light Blue */
+  --soft-yellow: #ffffed; /* Off-White/Yellow */
+  --fresh-green: #90ee90; /* Light Green (for buttons/success) */
+  --font-heading: "Fredoka One", cursive;
+  --font-body: "Roboto", sans-serif;
+  --dark-teal: #004d66; /* Dark color for logo/text contrast */
 }
 
 body {
-    font-family: var(--font-body);
-    background-color: white;
-    margin: 0;
-    padding: 0;
+  font-family: var(--font-body);
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    padding: 20px 15px;
+  padding: 20px 15px;
 }
 
 /* ===========================
    2. TYPOGRAPHY & HEADERS
    =========================== */
-h1, h2, h3 {
-    font-family: var(--font-heading);
-    color: var(--dark-teal);
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  color: var(--dark-teal);
 }
 
 .page-title {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.8rem;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.8rem;
 }
 
 .page-subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 25px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 25px;
 }
 
 /* ===========================
    3. HEADER & NAVIGATION (With Animation)
    =========================== */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    background: var(--primary-blue);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative; /* For dropdown nav positioning */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--primary-blue);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* For dropdown nav positioning */
 }
 
 #logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--dark-teal);
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--dark-teal);
 }
 
 #menu-btn {
-    background: var(--fresh-green);
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 1.4rem;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  background: var(--fresh-green);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 /* Menu Button Rotation Animation */
 #menu-btn.open {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* Navigation Links (Dropdown Style) */
 #nav-links {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 55px; /* Position below header */
-    right: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 10;
-   
-    /* CSS Animation (Transition) */
-    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-    overflow: hidden;
-    max-height: 300px; /* Max height when visible */
-    opacity: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  position: absolute;
+  top: 55px; /* Position below header */
+  right: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  /* CSS Animation (Transition) */
+  transition:
+    max-height 0.4s ease-in-out,
+    opacity 0.4s ease-in-out;
+  overflow: hidden;
+  max-height: 300px; /* Max height when visible */
+  opacity: 1;
 }
 
 #nav-links a {
-    color: #333;
-    text-decoration: none;
-    padding: 8px 0;
-    font-family: var(--font-body);
+  color: #333;
+  text-decoration: none;
+  padding: 8px 0;
+  font-family: var(--font-body);
 }
 
 /* Hidden state for animation */
 #nav-links.hidden {
-    max-height: 0;
-    opacity: 0;
-    /* Prevents clicking invisible links */
-    pointer-events: none;
+  max-height: 0;
+  opacity: 0;
+  /* Prevents clicking invisible links */
+  pointer-events: none;
 }
 
 /* ===========================
    4. SEARCH & GRID LAYOUT
    =========================== */
 .search-box {
-    display: flex;
-    justify-content: center;
-    padding: 0 1rem;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  margin-bottom: 20px;
 }
 
-#lessonSearch, #foodSearch {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
+#lessonSearch,
+#foodSearch {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
 .lesson-grid,
 .food-list {
-    display: grid;
-    /* Responsive grid: min 250px wide items */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
+  display: grid;
+  /* Responsive grid: min 250px wide items */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 /* ===========================
    5. LESSON CARDS
    =========================== */
 .lesson-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
 /* Hover Animation */
 .lesson-card:hover {
-    transform: scale(1.03);
+  transform: scale(1.03);
 }
 
 .lesson-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block; /* Make the whole card clickable */
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Make the whole card clickable */
 }
 
 .lesson-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .lesson-card h3 {
-    font-size: 1rem;
-    margin: 8px 0 3px 0;
+  font-size: 1rem;
+  margin: 8px 0 3px 0;
 }
 
 .lesson-card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 
 /* ===========================
    6. NUTRITION RESULTS & DETAILS
    =========================== */
 .food-result-card {
-    display: flex;
-    align-items: center;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .food-result-card:hover {
-    background: var(--soft-yellow);
+  background: var(--soft-yellow);
 }
 
 .food-thumbnail {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    margin-right: 15px;
-    object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 15px;
+  object-fit: cover;
 }
 
 .food-title {
-    font-family: var(--font-body);
-    font-weight: bold;
-    color: var(--dark-teal);
+  font-family: var(--font-body);
+  font-weight: bold;
+  color: var(--dark-teal);
 }
 
 .details-panel {
-    margin-top: 30px;
-    padding: 20px;
-    background: #f9fcff;
-    border-radius: 12px;
-    border: 1px solid var(--primary-blue);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9fcff;
+  border-radius: 12px;
+  border: 1px solid var(--primary-blue);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .nutrition-list {
-    list-style: none;
-    padding: 0;
-    line-height: 2rem;
+  list-style: none;
+  padding: 0;
+  line-height: 2rem;
 }
 
 .nutrition-list li strong {
-    display: inline-block;
-    width: 150px; /* Aligns the values */
-    font-weight: 500;
+  display: inline-block;
+  width: 150px; /* Aligns the values */
+  font-weight: 500;
 }
 
 /* ===========================
    7. PROFILE & DASHBOARD
    =========================== */
-#profileSection, #dashboardSection {
-    margin-bottom: 40px;
-    padding: 10px;
+#profileSection,
+#dashboardSection {
+  margin-bottom: 40px;
+  padding: 10px;
 }
 
-.profile-form, .profile-display {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    background: var(--soft-yellow);
+.profile-form,
+.profile-display {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: var(--soft-yellow);
 }
 
 .profile-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: var(--dark-teal);
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: var(--dark-teal);
 }
 
 .profile-form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .btn-save {
-    background: var(--fresh-green);
-    color: var(--dark-teal);
-    border: none;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100%;
-    transition: background 0.2s;
+  background: var(--fresh-green);
+  color: var(--dark-teal);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: background 0.2s;
 }
 
 .btn-save:hover {
-    background: #76d176;
+  background: #76d176;
 }
 
 /* Dashboard Cards Layout */
 .dashboard-cards {
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .dash-card {
-    flex: 1;
-    min-width: 150px;
-    text-align: center;
-    padding: 15px;
-    background: white;
-    border: 2px solid var(--primary-blue);
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 15px;
+  background: white;
+  border: 2px solid var(--primary-blue);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .dash-card h3 {
-    margin: 0 0 5px 0;
-    font-size: 1.1rem;
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
 }
 
 .dash-card p {
-    font-size: 1.5rem;
-    font-family: var(--font-heading);
-    color: var(--fresh-green);
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  color: var(--fresh-green);
 }
 
 #progressChart {
-    display: block;
-    max-width: 100%;
-    margin: 20px auto;
+  display: block;
+  max-width: 100%;
+  margin: 20px auto;
 }
 
 /* ===========================
    8. FOOTER
    =========================== */
 footer {
-    text-align: center;
-    padding: 15px;
-    background: var(--soft-yellow);
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #555;
+  text-align: center;
+  padding: 15px;
+  background: var(--soft-yellow);
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 /* ===========================
@@ -336,52 +343,57 @@ footer {
 
 /* A. Dashboard Completion Pulse */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(135, 206, 235, 0.7);
-    }
-    70% {
-        transform: scale(1.03);
-        box-shadow: 0 0 0 10px rgba(135, 206, 235, 0);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(135, 206, 235, 0.7);
+  }
+  70% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(135, 206, 235, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .dash-card.complete {
-    /* Runs the animation once on completion */
-    animation: pulse 0.5s ease-out;
-    border-color: var(--fresh-green);
+  /* Runs the animation once on completion */
+  animation: pulse 0.5s ease-out;
+  border-color: var(--fresh-green);
 }
 
 /* B. Loading Spinner Animation */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading {
-    text-align: center;
-    color: #777;
-    padding: 20px;
-    font-family: var(--font-heading);
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  font-family: var(--font-heading);
 }
 
 .loading::before {
-    content: '';
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid var(--primary-blue);
-    border-radius: 50%;
-    /* Apply the animation */
-    animation: spin 1s linear infinite;
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  /* Apply the animation */
+  animation: spin 1s linear infinite;
 }
 
-.no-results, .instruction {
+.no-results,
+.instruction {
   text-align: center;
   color: #777;
   font-size: 1rem;
@@ -395,83 +407,85 @@ footer {
 
 /* Dashboard Cards Layout (No change needed here) */
 .dashboard-cards {
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 /* ... (dash-card styles) ... */
 
 .dash-card {
-    flex: 1 1 120px;
-    min-width: 120px;
-    text-align: center;
-    padding: 15px 10px;
-    background: white;
-    border: 2px solid var(--primary-blue); 
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
+  flex: 1 1 120px;
+  min-width: 120px;
+  text-align: center;
+  padding: 15px 10px;
+  background: white;
+  border: 2px solid var(--primary-blue);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.5);
 }
 
 .dash-card h3 {
-    margin: 0 0 5px 0;
-    font-size: 1 1rem;
+  margin: 0 0 5px 0;
+  font-size: 1 1rem;
 }
 
 /* 🎯 NEW/UPDATED: Progress Chart Styling */
 #progressChart {
-    /* Ensures the canvas takes up the full width available */
-    width: 100%;
-    max-width: 600px; /* Prevents it from getting too wide on desktop */
-    display: block;
-    margin: 20px auto; /* Centers the chart */
-    border: 1px solid #ccc; /* Add a slight border for visibility */
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  /* Ensures the canvas takes up the full width available */
+  width: 100%;
+  max-width: 600px; /* Prevents it from getting too wide on desktop */
+  display: block;
+  margin: 20px auto; /* Centers the chart */
+  border: 1px solid #ccc; /* Add a slight border for visibility */
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* ===========================
    11. GAME MENU STYLES
    =========================== */
 .game-list {
-    display: grid;
-    /* Responsive grid: min 250px wide items, 2 columns on desktop */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    padding: 10px;
+  display: grid;
+  /* Responsive grid: min 250px wide items, 2 columns on desktop */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  padding: 10px;
 }
 
 .game-card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    border: 3px solid var(--primary-blue);
-    transition: transform 0.2s ease-out, box-shadow 0.2s;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: 3px solid var(--primary-blue);
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s;
 }
 
 /* Hover effect for engagement (CSS Animation) */
 .game-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-    border-color: var(--fresh-green); /* Visual feedback on hover */
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  border-color: var(--fresh-green); /* Visual feedback on hover */
 }
 
 .game-card h3 {
-    font-family: var(--font-heading);
-    color: var(--dark-teal);
-    font-size: 1.4rem;
-    margin-top: 0;
+  font-family: var(--font-heading);
+  color: var(--dark-teal);
+  font-size: 1.4rem;
+  margin-top: 0;
 }
 
 .game-card p {
-    color: #666;
-    font-size: 0.95rem;
+  color: #666;
+  font-size: 0.95rem;
 }

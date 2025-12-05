@@ -1,53 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthyKids – Games</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/games.js" type="module"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <div id="logo">HealthyKids</div>
+      <button id="menu-btn">☰</button>
+      <nav id="nav-links" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="nutrition.html">Nutrition</a>
+        <a href="lesson.html">Lessons</a>
+        <a href="tracker.html">Habit Tracker</a>
+        <a href="games.html">Games</a>
+        <a href="profile.html">Dashboard</a>
+      </nav>
+    </header>
 
-<header>
-    <div id="logo">HealthyKids</div>
-    <button id="menu-btn">☰</button>
-    <nav id="nav-links" class="hidden">
-            <a href="index.html">Home</a>
-            <a href="nutrition.html">Nutrition</a>
-            <a href="lesson.html">Lessons</a>
-            <a href="tracker.html">Habit Tracker</a>
-            <a href="games.html">Games</a>
-            <a href="profile.html">Dashboard</a>
-        </nav>
-</header>
+    <main>
+      <h1 class="page-title">Fun Health Games</h1>
+      <p class="page-subtitle">Play and learn healthy habits</p>
 
-<main>
-    <h1 class="page-title">Fun Health Games</h1>
-    <p class="page-subtitle">Play and learn healthy habits</p>
-
-    <div class="game-list">
-        <div class="game-card" id="handwashGame" onclick="window.location.href='handwash_timer.html'">
-            <h3>Handwashing Timer</h3>
-            <p>Learn the 20-second handwashing rule</p>
+      <div class="game-list">
+        <div
+          class="game-card"
+          id="handwashGame"
+          onclick="window.location.href = 'handwash_timer.html'"
+        >
+          <h3>Handwashing Timer</h3>
+          <p>Learn the 20-second handwashing rule</p>
         </div>
 
-        <div class="game-card" id="brushGame" onclick="window.location.href='brush_timer.html'">
-            <h3>Teeth Brushing Timer</h3>
-            <p>Brush your teeth for 2 minutes</p>
+        <div
+          class="game-card"
+          id="brushGame"
+          onclick="window.location.href = 'brush_timer.html'"
+        >
+          <h3>Teeth Brushing Timer</h3>
+          <p>Brush your teeth for 2 minutes</p>
         </div>
 
-        <div class="game-card" id="quizGame" onclick="window.location.href='quiz.html'">
-            <h3>Health Quiz</h3>
-            <p>Test your healthy habits knowledge</p>
+        <div
+          class="game-card"
+          id="quizGame"
+          onclick="window.location.href = 'quiz.html'"
+        >
+          <h3>Health Quiz</h3>
+          <p>Test your healthy habits knowledge</p>
         </div>
-    </div>
-</main>
+      </div>
+    </main>
 
-<footer>
-    <p>&copy; 2025 HealthyKids</p>
-</footer>
-<script src="js/menu.js"></script>
-
-</body>
+    <footer>
+      <p>&copy; 2025 HealthyKids</p>
+    </footer>
+    <script src="js/menu.js"></script>
+  </body>
 </html>
