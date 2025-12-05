@@ -1,0 +1,3 @@
+/youtube-search /.netlify/functions/youtube-search 200
+/food-search /.netlify/functions/food-search 200
+/food-details /.netlify/functions/food-details 200

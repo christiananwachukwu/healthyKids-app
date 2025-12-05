@@ -1,0 +1,9 @@
+[build]
+  # 1. Explicitly defines the folder where your serverless functions are located
+  functions = "netlify/functions"
+
+[[headers]]
+  for = "/*" # Apply the header to all assets and pages
+  [headers.values]
+    # 2. Fixes the CORS issue for external APIs like Wikimedia
+    Access-Control-Allow-Origin = "*"
