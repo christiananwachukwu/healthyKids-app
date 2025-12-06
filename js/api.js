@@ -1,7 +1,3 @@
-// js/api.js - FINAL UNIFIED API FILE
-
-import { API_KEYS } from "./config.js";
-
 // ----------------------------------------- YOUTUBE API (Video Search) ------------------------------------------
 // Used for user searches (requires valid Google API Key)
 
