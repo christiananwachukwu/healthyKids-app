@@ -143,3 +143,5 @@ js/config.js
 
 # Local Netlify folder
 .netlify
+# Local Environment Variables
+.env
