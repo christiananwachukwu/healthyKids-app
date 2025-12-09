@@ -3,18 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HealthyKids App</title>
+    <meta name="description" content="Wdd 330 Project">
+    <meta name="author" content="Christiana Nwachukwu">
+    <meta property="og:type" content="HealthyKids-App Home Page" />
+    <meta property="og:description" content="Help your kids build healthy habits with our easy-to-use nutrition search, habit tracker, and fun educational lessons." />
+    <meta property="og:image" content="https://christiananwachukwu.github.io/healthyKids-app/images/facebook-metaTag.webp" />
+    <meta property="og:url" content="https://christiananwachukwu.github.io/healthyKids-app/index.html" />
+
+    <title>HealthyKids App - Home Page</title>
+    
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" type="module"></script>
   </head>
   <body>
     <header>
-      <div id="logo">HealthyKids</div>
+      <a href="index.html" id="logo-link">
+          <img src="images/logo.webp" alt="HealthyKids App Logo" class="header-logo">
+      </a>
+      <div class="slogan-container">
+        <span class="slogan">Nourish, Learn, Grow!</span>
+      </div>
+     
       <button id="menu-btn">☰</button>
       <nav id="nav-links" class="hidden">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="nutrition.html">Nutrition</a>
-        <a href="lesson.html">Lessons</a>
+        <a href="lessons.html">Lessons</a>
         <a href="tracker.html">Habit Tracker</a>
         <a href="games.html">Games</a>
         <a href="profile.html">Dashboard</a>
@@ -22,11 +36,39 @@
     </header>
 
     <main>
+      <div class="hero-image-container">
+          <img
+              src="images/hero-image.webp"
+              alt="A dynamic hero image promoting healthy eating for kids."
+              class="hero-image">
+      </div>
+      <section class="hero-text-section">
+              <h2>Nourish, Learn, Grow!</h2>
+              <p>Track habits and discover fun, healthy recipes.</p>
+      </section>
+      </div>
       <div id="app-container"></div>
     </main>
 
     <footer>
-      <p>&copy; 2025 HealthyKids</p>
+      <div class="footer-copyright">
+        <p>&copy; <span id="year"></span> | Christiana Nwachukwu | Nigeria</p>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://github.com/christiananwachukwu" target="_blank">
+          <img src="images/github-brands.svg" alt="Github icon" width="32" height="32">
+        </a>
+        <a href="https://www.facebook.com/christy.nwachukwu?mibextid=ZbWKwL" target="_blank">
+          <img src="images/facebook-brands.svg" alt="Facebook icon" width="32" height="32">
+        </a>
+        <a href="https://wa.me/qr/2050DHIZ72LEG1" target="_blank">
+          <img src="images/whatsapp-brands-solid.svg" alt="Whatsapp icon" width="32" height="32">
+        </a>
+      </div>
+      <div class="footer-last-modified">
+        <p id="lastModified"></p>
+      </div>
     </footer>
     <script src="js/menu.js"></script>
   </body>

@@ -1,5 +1,6 @@
 // js/main.js
-
+import { setFooterInfo } from "./date.js";
+window.addEventListener('DOMContentLoaded', setFooterInfo);
 // ----------- HAMBURGER MENU -----------
 const menuBtn = document.getElementById("menu-btn");
 const body = document.body;

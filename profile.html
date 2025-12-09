@@ -7,19 +7,25 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/dashboard.js" type="module"></script>
     <script src="js/profile.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
   </head>
 
   <body>
     <header>
-      <div id="logo">HealthyKids</div>
+      <a href="index.html" id="logo-link">
+          <img src="images/logo.webp" alt="HealthyKids App Logo" class="header-logo">
+      </a>
+      <div class="slogan-container">
+        <span class="slogan">Nourish, Learn, Grow!</span>
+      </div>
       <button id="menu-btn">☰</button>
       <nav id="nav-links" class="hidden">
         <a href="index.html">Home</a>
         <a href="nutrition.html">Nutrition</a>
-        <a href="lesson.html">Lessons</a>
+        <a href="lessons.html">Lessons</a>
         <a href="tracker.html">Habit Tracker</a>
         <a href="games.html">Games</a>
-        <a href="profile.html">Dashboard</a>
+        <a href="profile.html" class="active">Dashboard</a>
       </nav>
     </header>
 
@@ -30,11 +36,13 @@
         <p class="page-subtitle">Enter child information</p>
 
         <form id="profileForm" class="profile-form">
-          <label>Name:</label>
-          <input type="text" id="childName" placeholder="Enter name" />
+          <label for="profileName">Name:
+          <input type="text" id="profileName" placeholder="Enter name">
+          </label>
 
-          <label>Age:</label>
-          <input type="number" id="childAge" placeholder="Age in years" />
+          <label for="profileAge">Age:
+          <input type="number" id="profile" placeholder="Age in years">
+          </label>
 
           <button type="submit" class="btn-save">Save Profile</button>
         </form>
@@ -83,7 +91,24 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 HealthyKids</p>
+      <div class="footer-copyright">
+        <p>&copy; <span id="year"></span> | Christiana Nwachukwu | Nigeria</p>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://github.com/christiananwachukwu" target="_blank">
+          <img src="images/github-brands.svg" alt="Github icon" width="32" height="32">
+        </a>
+        <a href="https://www.facebook.com/christy.nwachukwu?mibextid=ZbWKwL" target="_blank">
+          <img src="images/facebook-brands.svg" alt="Facebook icon" width="32" height="32">
+        </a>
+        <a href="https://wa.me/qr/2050DHIZ72LEG1" target="_blank">
+          <img src="images/whatsapp-brands-solid.svg" alt="Whatsapp icon" width="32" height="32">
+        </a>
+      </div>
+      <div class="footer-last-modified">
+        <p id="lastModified"></p>
+      </div>
     </footer>
     <script src="js/menu.js"></script>
   </body>

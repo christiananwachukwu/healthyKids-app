@@ -1,13 +1,22 @@
-/* ===========================
+/* ===========================================
    1. COLOR VARIABLES & BASE
-   =========================== */
+   =========================================== */
 :root {
-  --primary-blue: #add8e6; /* Light Blue */
-  --soft-yellow: #ffffed; /* Off-White/Yellow */
-  --fresh-green: #90ee90; /* Light Green (for buttons/success) */
+  /* YOUR PALETTE - SYNCHRONIZED */
+  --primary-blue: #add8e6;        /* Light Blue (Header/Background) */
+  --soft-yellow: #ffffed;         /* Off-White/Yellow (Footer/Card Background) */
+  --fresh-green: #90ee90;         /* Light Green (for buttons/success) */
+  --fresh-green-dark: #337c37;
+  --dark-teal: #1a1a1a;           /* Dark color for logo/text contrast */
+  --accent-blue: #007bff;         /* Primary blue for slogan/links */
+  --dark-text-contrast: #003366
+  --secondary-accent: #ff6347;    /* Tomato red (for hover/accents) */
+ 
+  /* FONTS & SIZES */
   --font-heading: "Fredoka One", cursive;
   --font-body: "Roboto", sans-serif;
-  --dark-teal: #004d66; /* Dark color for logo/text contrast */
+  --font-size-base: 1em;
+  --primary-text-color: #333;     /* General text color */
 }
 
 body {
@@ -20,13 +29,10 @@ body {
 main {
   padding: 20px 15px;
 }
-
-/* ===========================
-   2. TYPOGRAPHY & HEADERS
-   =========================== */
-h1,
-h2,
-h3 {
+/* ===========================================
+   2. TYPOGRAPHY
+   =========================================== */
+h1, h2, h3 {
   font-family: var(--font-heading);
   color: var(--dark-teal);
 }
@@ -39,37 +45,56 @@ h3 {
 
 .page-subtitle {
   text-align: center;
-  color: #666;
+  color: #444444;
   margin-bottom: 25px;
 }
 
-/* ===========================
-   3. HEADER & NAVIGATION (With Animation)
-   =========================== */
+/* ===========================================
+   3. HEADER & NAVIGATION (MOBILE-FIRST & RESPONSIVE)
+   =========================================== */
+
+/* MOBILE BASE STYLES (Applies up to 767px) */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px;
-  background: var(--primary-blue);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative; /* For dropdown nav positioning */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background-color: var(--primary-blue);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: var(--font-size-base);
 }
 
-#logo {
-  font-family: var(--font-heading);
-  font-size: 1.8rem;
-  color: var(--dark-teal);
+.header-logo {
+    height: 45px; /* Smaller logo for mobile */
+    width: auto;
+    display: block;
+}
+
+.slogan-container {
+    width: 100%;
+    margin: 5px 0 5px 0;
+    text-align: left;
+    order: 3; /* Forces slogan to the bottom on mobile */
+}
+
+.slogan {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--dark-text-contrast);
+    white-space: nowrap;
 }
 
 #menu-btn {
-  background: var(--fresh-green);
-  border: none;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    display: block; /* Show hamburger button on mobile */
+    background: var(--fresh-green);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 /* Menu Button Rotation Animation */
@@ -77,41 +102,233 @@ header {
   transform: rotate(90deg);
 }
 
-/* Navigation Links (Dropdown Style) */
+/* Mobile Dropdown Navigation Links */
 #nav-links {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  position: absolute;
-  top: 55px; /* Position below header */
-  right: 10px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+    display: none; /* Controlled by JS via .hidden / .visible */
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 75px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
 
-  /* CSS Animation (Transition) */
-  transition:
-    max-height 0.4s ease-in-out,
-    opacity 0.4s ease-in-out;
-  overflow: hidden;
-  max-height: 300px; /* Max height when visible */
-  opacity: 1;
+#nav-links.hidden {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#nav-links.visible {
+  display: flex;
 }
 
 #nav-links a {
-  color: #333;
+  color: var(--primary-text-color);
   text-decoration: none;
   padding: 8px 0;
   font-family: var(--font-body);
 }
 
-/* Hidden state for animation */
-#nav-links.hidden {
-  max-height: 0;
-  opacity: 0;
-  /* Prevents clicking invisible links */
-  pointer-events: none;
+/* ------------------------------------------- */
+/* MEDIUM SCREENS (Tablet/Desktop) - 768px UP  */
+/* ------------------------------------------- */
+@media (min-width: 768px) {
+    header {
+        flex-wrap: nowrap;
+        padding: 12px 30px;
+    }
+   
+    .header-logo {
+        height: 60px; /* Full size logo */
+    }
+   
+    .slogan-container {
+        width: auto;
+        margin-left: 20px;
+        order: 0;
+        text-align: left;
+    }
+   
+    .slogan {
+        font-size: 1.1em;
+    }
+
+    #menu-btn {
+        display: none; /* HIDE hamburger button on desktop */
+    }
+
+    #nav-links.hidden {
+      display: flex !important;
+      max-height: none !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    /* Desktop Navigation (Horizontal) */
+    #nav-links {
+        display: flex !important; /* SHOW navigation links horizontally */
+        position: static;
+        flex-direction: row;
+        background: none;
+        box-shadow: tomato;
+        padding: 0;
+        opacity: 1;
+        max-height: none;
+        z-index: auto;
+    }
+   
+    #nav-links a {
+        padding: 0 10px;
+        transition: color 0.3s;
+    }
+   
+    #nav-links a:hover {
+        color: var(--secondary-accent);
+    }
+}
+
+/* ===========================================
+   4. HERO IMAGE & TEXT STYLES (COVER FITTING)
+   =========================================== */
+
+.hero-image-container {
+    width: 100%;
+    height: 100vh; /* Increased height for dominant banner look */
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--soft-yellow);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* FILLS the container, cropping if needed */
+    object-position: center center;
+}
+
+.hero-text-section {
+  background-color: var(--primary-blue);
+  color: var(--dark-teal);
+  text-align: center;
+  padding: 20px 15px;
+  margin-top: -5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text-section h2 {
+  font-size: 2em;
+  color: var(--dark-teal);
+  margin: 0 0 5px 0;
+}
+
+.hero-text-section p {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+    .hero-image-container {
+        height: 40vh;
+    }
+    .hero-text-section {
+        font-size: 1.5em;
+        padding: 30px 50px;
+    }
+}
+
+/* ===========================================
+   10. FOOTER (Synchronized with Header & Flex Layout)
+   =========================================== */
+footer {
+  /* Mobile Base: Stacked and Centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  padding: 15px;
+  background: var(--primary-blue);
+  margin-top: 30px;
+  font-size: var(--font-size-base);
+  color: var(--dark-teal);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-body);
+}
+
+/* Container for the text elements (Copyright/Modified) */
+.footer-left-content {
+    /* On mobile, this will stack and align center */
+    width: 100%;
+    order: 2;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Social icons remain centered on all screen sizes */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0 15px 0;
+  width: 100%;
+  order: 1; /* Place above text on mobile */
+}
+
+/* This is a placeholder to push the social icons to the center on desktop */
+.footer-spacer {
+    display: none;
+}
+
+footer p {
+    margin: 5px 0;
+    color: var(--dark-teal);
+}
+
+/* ------------------------------------------- */
+/* MEDIUM SCREENS (Tablet/Desktop) - 768px UP  */
+/* ------------------------------------------- */
+@media (min-width: 768px) {
+    footer {
+        flex-direction: row; /* Switch to horizontal layout */
+        justify-content: space-between; /* Space out the three conceptual columns */
+        align-items: center;
+        padding: 15px 30px;
+    }
+
+    /* 1. Left Content: Aligned Left */
+    .footer-left-content {
+        order: 1;
+        width: 33%; /* Takes up a third of the space */
+        text-align: left;
+        margin: 0;
+    }
+
+    /* 2. Center Icons: Aligned Center (Flexbox handles centering within the 33% block) */
+    .social-icons {
+        order: 2;
+        width: 33%;
+        justify-content: center;
+        margin: 0;
+    }
+
+    /* 3. Right Spacer: Balances the flex layout to center the middle item */
+    .footer-spacer {
+        display: block;
+        order: 3;
+        width: 33%; /* Mirrors the left content width */
+    }
+
+    footer p {
+        text-align: left; /* Ensure text is left-aligned on desktop */
+    }
 }
 
 /* ===========================
@@ -298,125 +515,6 @@ header {
 }
 
 .dash-card {
-  flex: 1;
-  min-width: 150px;
-  text-align: center;
-  padding: 15px;
-  background: white;
-  border: 2px solid var(--primary-blue);
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.dash-card h3 {
-  margin: 0 0 5px 0;
-  font-size: 1.1rem;
-}
-
-.dash-card p {
-  font-size: 1.5rem;
-  font-family: var(--font-heading);
-  color: var(--fresh-green);
-}
-
-#progressChart {
-  display: block;
-  max-width: 100%;
-  margin: 20px auto;
-}
-
-/* ===========================
-   8. FOOTER
-   =========================== */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: var(--soft-yellow);
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* ===========================
-   9. CSS ANIMATIONS (Mandatory Requirement)
-   =========================== */
-
-/* A. Dashboard Completion Pulse */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(135, 206, 235, 0.7);
-  }
-  70% {
-    transform: scale(1.03);
-    box-shadow: 0 0 0 10px rgba(135, 206, 235, 0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.dash-card.complete {
-  /* Runs the animation once on completion */
-  animation: pulse 0.5s ease-out;
-  border-color: var(--fresh-green);
-}
-
-/* B. Loading Spinner Animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loading {
-  text-align: center;
-  color: #777;
-  padding: 20px;
-  font-family: var(--font-heading);
-}
-
-.loading::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid var(--primary-blue);
-  border-radius: 50%;
-  /* Apply the animation */
-  animation: spin 1s linear infinite;
-}
-
-.no-results,
-.instruction {
-  text-align: center;
-  color: #777;
-  font-size: 1rem;
-  padding: 20px;
-}
-
-/* ===========================
-   7. PROFILE & DASHBOARD
-   =========================== */
-/* ... (existing styles like #profileSection, .profile-form, etc.) ... */
-
-/* Dashboard Cards Layout (No change needed here) */
-.dashboard-cards {
-  display: flex;
-  justify-content: space-around;
-  gap: 15px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-}
-
-/* ... (dash-card styles) ... */
-
-.dash-card {
   flex: 1 1 120px;
   min-width: 120px;
   text-align: center;
@@ -429,17 +527,21 @@ footer {
 
 .dash-card h3 {
   margin: 0 0 5px 0;
-  font-size: 1 1rem;
+  font-size: 1.1rem;
 }
 
-/* 🎯 NEW/UPDATED: Progress Chart Styling */
+.dash-card p {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  color: var(--fresh-green-dark);
+}
+
 #progressChart {
-  /* Ensures the canvas takes up the full width available */
   width: 100%;
-  max-width: 600px; /* Prevents it from getting too wide on desktop */
+  max-width: 600px;
   display: block;
-  margin: 20px auto; /* Centers the chart */
-  border: 1px solid #ccc; /* Add a slight border for visibility */
+  margin: 20px auto;
+  border: 1px solid #ccc;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -450,7 +552,6 @@ footer {
    =========================== */
 .game-list {
   display: grid;
-  /* Responsive grid: min 250px wide items, 2 columns on desktop */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
   max-width: 800px;
@@ -486,6 +587,67 @@ footer {
 }
 
 .game-card p {
-  color: #666;
+  color: #333333;
   font-size: 0.95rem;
+}
+
+/* ===========================
+   9. CSS ANIMATIONS & UTILITIES
+   =========================== */
+
+/* A. Dashboard Completion Pulse */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(135, 206, 235, 0.7);
+  }
+  70% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(135, 206, 235, 0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dash-card.complete {
+  animation: pulse 0.5s ease-out;
+  border-color: var(--fresh-green);
+}
+
+/* B. Loading Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  text-align: center;
+  color: #777;
+  padding: 20px;
+  font-family: var(--font-heading);
+}
+
+.loading::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.no-results,
+.instruction {
+  text-align: center;
+  color: #555555 !important;
+  font-size: 1rem;
+  padding: 20px;
 }
